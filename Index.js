@@ -5,6 +5,9 @@ const dishRouter=require('./routers/dishRouter')
 const orderRouter=require('./routers/orderRouter')
 const cloudinary=require('cloudinary').v2
 const cors=require('cors');
+const dotenv=require('dotenv');
+
+dotenv.config('./env')
 
 
 cloudinary.config({ 
@@ -20,7 +23,7 @@ app.use(express.json());
 
 app.use(cors({
     credentials:true,
-    origin:'http://localhost:3000'
+    origin:`${process.env.BASE_URL}`
 }))
 
 app.use('/table',tableRouter);
