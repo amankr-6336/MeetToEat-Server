@@ -11,9 +11,9 @@ dotenv.config('./env')
 
 
 cloudinary.config({ 
-    cloud_name: 'dl3cgvz4w', 
-    api_key: '733819118317157', 
-    api_secret: 'chlMucGH1Tp0wfczk4QSCH8vs10' 
+    cloud_name: `${process.env.CLOUD_NAME}`, 
+    api_key: `${process.env.API_KEY}`, 
+    api_secret: `${process.env.API_SECRET}` 
   });
   
 
