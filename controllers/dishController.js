@@ -1,15 +1,15 @@
 const Dish=require('../models/Dishes');
 const Table=require('../models/Table');
-const cloudinary=require('cloudinary').v2
+// const cloudinary=require('cloudinary').v2
 
 const dishCreateController=async(req,res)=>{
     try {
         
         const{typeoffood,category,dishName,brief,price,image}=req.body;
 
-        const cloudImg=await cloudinary.uploader.upload(image,{
-            folder:"restro"
-        })
+        // const cloudImg=await cloudinary.uploader.upload(image,{
+        //     folder:"restro"
+        // })
 
         const dish=await Dish.create({
            typeoffood,
@@ -18,8 +18,8 @@ const dishCreateController=async(req,res)=>{
            brief,
            price,
            image:{
-            publicId:cloudImg.public_id,
-            url:cloudImg.url
+            // publicId:cloudImg.public_id,
+            // url:cloudImg.url
            }
         })
 
